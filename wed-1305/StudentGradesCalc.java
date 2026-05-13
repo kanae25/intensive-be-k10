@@ -16,7 +16,12 @@ public class StudentGradesCalc {
         double averageGrade = (mathGrade + englishGrade + literatureGrade) / 3;
         String letterGrade;
 
-        
+        System.out.println("");
+        System.out.println("Math Grade: " + mathGrade);
+        System.out.println("English Grade: " + englishGrade);
+        System.out.println("Literature Grade: " + literatureGrade);
+        System.out.println("Average Grade: " + averageGrade);
+        System.out.println("");
 
         input.close();
     }
