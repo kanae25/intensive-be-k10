@@ -14,8 +14,11 @@ public class StudentGradesCalc {
         System.out.print("Enter Literature grade: ");
         double literature = input.nextDouble();
 
-        double averageScore = Math.round((math + english + literature) / 3 * 100.0) / 100.0;        String avgLetterGrade;
+        // calc average score / create letter grade
+        double averageScore = Math.round((math + english + literature) / 3 * 100.0) / 100.0;
+        String avgLetterGrade;
 
+        // check failed subject / students
         if (math < 5 || english < 5 || literature < 5) {
             System.out.println("");
             System.out.println("Math Grade: " + math);
