@@ -3,25 +3,46 @@ import java.util.Scanner;
 public class StudentGradesCalc {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        System.out.println("");
 
         System.out.print("Enter Math grade: ");
-        double mathGrade = input.nextDouble();
+        double math = input.nextDouble();
 
         System.out.print("Enter English grade: ");
-        double englishGrade = input.nextDouble();
+        double english = input.nextDouble();
 
         System.out.print("Enter Literature grade: ");
-        double literatureGrade = input.nextDouble();
+        double literature = input.nextDouble();
 
-        double averageGrade = (mathGrade + englishGrade + literatureGrade) / 3;
-        String letterGrade;
+        double averageScore = Math.round((math + english + literature) / 3 * 100.0) / 100.0;        String avgLetterGrade;
 
-        System.out.println("");
-        System.out.println("Math Grade: " + mathGrade);
-        System.out.println("English Grade: " + englishGrade);
-        System.out.println("Literature Grade: " + literatureGrade);
-        System.out.println("Average Grade: " + averageGrade);
-        System.out.println("");
+        if (math < 5 || english < 5 || literature < 5) {
+            System.out.println("");
+            System.out.println("Math Grade: " + math);
+            System.out.println("English Grade: " + english);
+            System.out.println("Literature Grade: " + literature);
+            System.out.println("Average Score: " + averageScore);
+            System.out.println("Average Letter Grade: F");
+            System.out.println("Failed Student.");
+            System.out.println("");
+        }
+
+        if (averageScore < 5) {
+            avgLetterGrade = "F";
+        } else if (averageScore >= 5 && averageScore < 6) {
+            avgLetterGrade = "D";
+        } else if (averageScore >= 6 && averageScore < 7) {
+            avgLetterGrade = "C";
+        } else if (averageScore >= 7 && averageScore < 8) {
+            avgLetterGrade = "B";
+        } else if (averageScore >= 8 && averageScore    < 9) {
+            avgLetterGrade = "A";
+        }
+        else {
+            avgLetterGrade = "S";
+        }
+
+        
 
         input.close();
     }
