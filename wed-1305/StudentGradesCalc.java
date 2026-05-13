@@ -1,16 +1,16 @@
 import java.util.Scanner;
 
-public class studentGrades {
+public class StudentGradesCalc {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         System.out.print("Enter Math grade: ");
-        double mathGrade = scanner.nextDouble();
+        double mathGrade = input.nextDouble();
 
         System.out.print("Enter English grade: ");
-        double englishGrade = scanner.nextDouble();
+        double englishGrade = input.nextDouble();
 
         System.out.print("Enter Literature grade: ");
-        double literatureGrade = scanner.nextDouble();
+        double literatureGrade = input.nextDouble();
     }
 }
