@@ -12,5 +12,12 @@ public class StudentGradesCalc {
 
         System.out.print("Enter Literature grade: ");
         double literatureGrade = input.nextDouble();
+
+        double averageGrade = (mathGrade + englishGrade + literatureGrade) / 3;
+        String letterGrade;
+
+        
+
+        input.close();
     }
 }
