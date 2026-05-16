@@ -1,6 +1,55 @@
 import java.util.Scanner;
 
 public class StudentGradesCalc {
+    // Grade levels make comparisons easier: F = 0, D = 1, C = 2, B = 3, A = 4, S = 5.
+    private static int getGradeLevel(double point) {
+        if (point < 5) {
+            return 0;
+        } else if (point < 6) {
+            return 1;
+        } else if (point < 7) {
+            return 2;
+        } else if (point < 8) {
+            return 3;
+        } else if (point < 9) {
+            return 4;
+        } else {
+            return 5;
+        }
+    }
+
+    private static String getGrade(int gradeLevel) {
+        if (gradeLevel == 0) {
+            return "F";
+        } else if (gradeLevel == 1) {
+            return "D";
+        } else if (gradeLevel == 2) {
+            return "C";
+        } else if (gradeLevel == 3) {
+            return "B";
+        } else if (gradeLevel == 4) {
+            return "A";
+        } else {
+            return "S";
+        }
+    }
+
+    private static String getMessage(int gradeLevel) {
+        if (gradeLevel == 5) {
+            return "excellent student";
+        } else if (gradeLevel == 4) {
+            return "good student";
+        } else if (gradeLevel == 3) {
+            return "normal student";
+        } else if (gradeLevel == 2) {
+            return "average student";
+        } else if (gradeLevel == 1) {
+            return "not bad student";
+        } else {
+            return "fail student";
+        }
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("");
@@ -16,36 +65,31 @@ public class StudentGradesCalc {
 
         // calc average score / create letter grade
         double averageScore = Math.round((math + english + literature) / 3 * 100.0) / 100.0;
-        String avgLetterGrade;
+        int mathGradeLevel = getGradeLevel(math);
+        int englishGradeLevel = getGradeLevel(english);
+        int literatureGradeLevel = getGradeLevel(literature);
+        int averageGradeLevel = getGradeLevel(averageScore);
 
         // check failed subject / students
-        if (math < 5 || english < 5 || literature < 5) {
-            System.out.println("");
-            System.out.println("Math Grade: " + math);
-            System.out.println("English Grade: " + english);
-            System.out.println("Literature Grade: " + literature);
-            System.out.println("Average Score: " + averageScore);
-            System.out.println("Average Letter Grade: F");
-            System.out.println("Failed Student.");
-            System.out.println("");
+        if (mathGradeLevel == 0 || englishGradeLevel == 0 || literatureGradeLevel == 0) {
+            averageGradeLevel = 0;
+        } else {
+            int lowestGradeLevel = Math.min(mathGradeLevel, Math.min(englishGradeLevel, literatureGradeLevel));
+            int highestAllowedGradeLevel = lowestGradeLevel + 1;
+
+            if (averageGradeLevel > highestAllowedGradeLevel) {
+                averageGradeLevel = highestAllowedGradeLevel;
+            }
         }
 
-        if (averageScore < 5) {
-            avgLetterGrade = "F";
-        } else if (averageScore >= 5 && averageScore < 6) {
-            avgLetterGrade = "D";
-        } else if (averageScore >= 6 && averageScore < 7) {
-            avgLetterGrade = "C";
-        } else if (averageScore >= 7 && averageScore < 8) {
-            avgLetterGrade = "B";
-        } else if (averageScore >= 8 && averageScore    < 9) {
-            avgLetterGrade = "A";
-        }
-        else {
-            avgLetterGrade = "S";
-        }
-
-        
+        System.out.println("");
+        System.out.println("Math Grade: " + getGrade(mathGradeLevel));
+        System.out.println("English Grade: " + getGrade(englishGradeLevel));
+        System.out.println("Literature Grade: " + getGrade(literatureGradeLevel));
+        System.out.println("Average Score: " + averageScore);
+        System.out.println("Average Letter Grade: " + getGrade(averageGradeLevel));
+        System.out.println(getMessage(averageGradeLevel));
+        System.out.println("");
 
         input.close();
     }

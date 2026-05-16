@@ -24,7 +24,7 @@
    - Example: Average Point: 8.5 (A) but English Point is 5 (D) -> Student's grade is C
 
 3. **Fail Subject Rule**:
-   - If there is one FAIL subject -> Student FAIL
+   - If there is one FAIL subject, meaning point < 5 -> Student FAIL 
 
 ### Output:
 - Print grade of all subjects
@@ -36,10 +36,3 @@
   - **C** -> print average student
   - **D** -> print not bad student
   - **F** -> print fail student
-
-### Example:
-```
-Math: 10
-Literature: 10
-English: 5 (D) -> Average: 8.33 (A) -> Print "good student" (difference: 3 grades) -> downgrade to C
-```
