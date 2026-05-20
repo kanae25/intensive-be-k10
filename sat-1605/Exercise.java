@@ -1,5 +1,6 @@
 public class Exercise {
     public static void main(String[] args) {
+        
         // int arrayNum[] = {1, 2, 3, 4, 5, 6};
         int arrayNum[] = {10, 8, 7, 9, 11, 12};
 
