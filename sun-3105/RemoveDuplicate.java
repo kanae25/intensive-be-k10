@@ -22,8 +22,8 @@ public class RemoveDuplicate {
     }
 
     public static void main(String[] args) {
-        int[] input = {1, 1, 2};
+        int[] input = {1, 1, 2, 3, 3, 4, 5, 5, 6};
         int[] output = removeDuplicate(input);
-        System.out.println(Arrays.toString(output)); // [1, 2]
+        System.out.println(Arrays.toString(output));
     }
 }
