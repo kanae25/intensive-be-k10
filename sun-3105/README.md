@@ -20,18 +20,18 @@ Using Scanner to ask user to choose an option:
 2. View Registered Users
 3. Login
 
-### When user inputs 1. Register
+### 1. Register
 
 - Let user input: First Name, Last Name, DOB, username, password
 - Collect user's info and save to a file named `users.txt`
 
-### When user inputs 2. View Registered Users
+### 2. View Registered Users
 
 - Ask user to choose options: 1. Show all, 2. Find by name
 - 1. Show all → show all users in the file `users.txt`
 - 2. Find by name → ask user to input some characters and find users whose FirstName or LastName contains that character → show the users
 
-### When user inputs 3. Login
+### 3. Login
 
 - Ask user to input username, password → compare with the users in the file `users.txt`
 - If login failed → let user try again 3 times → after 3 tries → account is locked and show message
